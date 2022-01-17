@@ -44,12 +44,12 @@ const Screen1 = () => {
 
 const styles = StyleSheet.create({
     container: {
-        display : "flex",
-        flexDirection : "column",
+        flex : 1,
         padding: 20,
-        justifyContent: "space-between",
+        justifyContent : "space-between",
         alignItems: "center",
-        height : 700
+        height : 700,
+      
         
     },
     closeBtnView: {
@@ -81,10 +81,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         borderRadius : 15,
         shadowColor : "#000",
-        elevation: 8,
-        // shadowOffset : {width : 15 , height : 10},
-        // shadowRadius: 3,
-        // shadowOffset : 5
+        elevation: 8
     },
     ListCheckBox: {
         width: 25,

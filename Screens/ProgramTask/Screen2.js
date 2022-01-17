@@ -1,11 +1,13 @@
 import React from "react";
-import { View, Text, TouchableOpacity , StyleSheet , ImageBackground  , Image} from 'react-native';
+import { View, Text, TouchableOpacity , StyleSheet , ImageBackground  , Image , Dimensions} from 'react-native';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const Screen2 = () => {
     return (
     
         <View style = {styles.container}>
-        <View>
+        <View style = {{zIndex : 999}}>
         <View style={styles.closeBtnView}>
             <TouchableOpacity style={styles.closeBtn}>
                 <Text style={styles.closeBtnText}>X</Text>
@@ -18,8 +20,10 @@ const Screen2 = () => {
                 <Text style={styles.Text2}>Log Hot Flash and triggers helps You identify the triggers</Text>
         </View>
         </View>
-        <ImageBackground source={require('../../Assets/checked2.png')} resizeMode="cover" style={styles.image} >
+        <View style={styles.BackgroundImage}>
+        <ImageBackground source={require('../../Assets/checked2.png')} style={styles.image} >
         </ImageBackground>
+        </View>
         </View>
     )
 }
@@ -52,13 +56,14 @@ const styles = StyleSheet.create({
         fontSize : 25,
     },
     image: {
-        display : "flex",
-        flexDirection : "column",
-        justifyContent: "center",
-        alignItems : "center",
-        width:200,
-        height:200,
+       
+        height : 150,
+        width : 150,
+        resizeMode :"cover"
       },
+      BackgroundImage : {
+          flex : 1,
+      }
    
 })
 export default Screen2

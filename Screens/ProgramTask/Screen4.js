@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-// import Slider from 'rn-range-slider';
+import Slider from "@react-native-community/slider";
 
 const Screen4 = () => {
     return (
@@ -22,9 +22,37 @@ const Screen4 = () => {
                         <Text style={styles.listText}>Mild</Text>
                         <Text style={styles.listText2}>1</Text>
                     </View>
+                    <View style={styles.rangeSliderView}>
+                    <View style={styles.rangeSliderContent}>
+                    <Text style={styles.rangeSliderText}>0</Text>
+                    <Slider
+                        style={styles.rangeSlider}
+                        minimumValue={0}
+                        maximumValue={1}
+                        minimumTrackTintColor="red"
+                        maximumTrackTintColor="red"
+                        thumbTintColor="red"
+                    />
+                    </View>
+                    <Text style={styles.rangeSliderText}>0</Text>
+                    </View>
                     <View style={styles.list}>
                         <Text style={styles.listText}>Medium</Text>
                         <Text style={styles.listText2}>2</Text>
+                    </View>
+                    <View style={styles.rangeSliderView}>
+                    <View style={styles.rangeSliderContent}>
+                    <Text style={styles.rangeSliderText}>0</Text>
+                    <Slider
+                        style={styles.rangeSlider}
+                        minimumValue={0}
+                        maximumValue={1}
+                        minimumTrackTintColor="red"
+                        maximumTrackTintColor="red"
+                        thumbTintColor="red"
+                    />
+                    </View>
+                    <Text style={styles.rangeSliderText}>0</Text>
                     </View>
                     <View style={styles.list}>
                         <Text style={styles.listText}>Server</Text>
@@ -32,15 +60,6 @@ const Screen4 = () => {
                     </View>
                 </View>
             </View>
-            {/* <Slider
-                style={{ width: 160, height: 80 }}
-                gravity={'center'}
-                min={200}
-                max={1000}
-                step={20}
-                selectionColor="#3df"
-                blankColor="#f618"
-            /> */}
         </View>
     )
 }
@@ -100,6 +119,25 @@ const styles = StyleSheet.create({
     ListContainer: {
         marginVertical: 25,
     },
+    rangeSlider: {
+        width: "90%",
+        height: 40,
+
+    },
+    rangeSliderView : {
+        display : "flex",
+        flexDirection : "row",
+        justifyContent : "space-between"
+
+    },
+    rangeSliderText :{
+        fontSize : 25,
+        width : "5%"
+    },
+    rangeSliderContent : {
+        display : "flex",
+        flexDirection : "row"
+    }
 
 })
 export default Screen4
